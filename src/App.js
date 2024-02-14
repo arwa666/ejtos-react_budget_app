@@ -6,37 +6,52 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Budget from './components/Budget';
 
 // Add code to import the other components here under
-
+import Remaining from './components/Remaining';
+import ExpenseList from './components/ExpenseList';
+import ExpenseItem from './components/ExpenseItem';
 
 import { AppProvider } from './context/AppContext';
+import ExpenseTotal from './components/ExpenseTotal';
+import AllocationForm from './components/AllocationForm';
 const App = () => {
     return (
         <AppProvider>
             <div className='container'>
                 <h1 className='mt-3'>Company's Budget Allocation</h1>
                     <div className='row mt-3'>
-                        {
-                            /* Add Budget component here */
-                        }        
+                      
 
+                    <div className='col-sm'>
+                        {
+                            <Budget/>
+                        }  
+                    </div>     
+                    <div className='col-sm'>
                         {
-                            /* Add Remaining component here*/
+                                           //Remaining component
+                         
+                            <Remaining />
+                        
                         }        
-
+                    </div>
+                    <div className='col-sm'>
                         {
-                            /* Add ExpenseTotal component here */
+                                           //ExpenseTotal component
+                         
+                            <ExpenseTotal />
+                        
                         }        
-                       
+                    </div>
                         {
-                            /* Add ExpenseList component here */
+                            <ExpenseList/>
                         }         
 
                         {
-                            /* Add ExpenseItem component here */
+                        //   <ExpenseItem/>
                         }        
 
                         {
-                            /* Add AllocationForm component here under */
+                           <AllocationForm/>
                         }        
 
                 </div>
