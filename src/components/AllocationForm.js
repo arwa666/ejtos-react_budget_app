@@ -33,7 +33,19 @@ const AllocationForm = (props) => {
                 });
             }
     };
-
+    const setCostValue = (value)=>{
+        const regex = /^[0-9]*$/;
+        if(regex.test(value)){
+            if(value< remaining){
+                setCost(value);
+            }else{
+                alert('the allocated value should not exceed the remaining budget');
+                setCost("");
+            }
+            
+        }
+    }
+ 
     return (
         <div>
             <div className='row'>
@@ -66,7 +78,7 @@ const AllocationForm = (props) => {
                         id='cost'
                         value={cost}
                         style={{ marginLeft: '2rem' , size: 10}}
-                        onChange={(event) => setCost(event.target.value)}>
+                        onChange={(event) => setCostValue(event.target.value)}>
                         </input>
 
                     <button className="btn btn-primary" onClick={submitEvent} style={{ marginLeft: '2rem' }}>

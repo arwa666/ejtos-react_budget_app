@@ -13,20 +13,24 @@ import ExpenseItem from './components/ExpenseItem';
 import { AppProvider } from './context/AppContext';
 import ExpenseTotal from './components/ExpenseTotal';
 import AllocationForm from './components/AllocationForm';
+import Currency from './components/Currency';
 const App = () => {
+    const rowStyle ={
+        flexWrap:'nowrap'
+    }
     return (
         <AppProvider>
             <div className='container'>
                 <h1 className='mt-3'>Company's Budget Allocation</h1>
-                    <div className='row mt-3'>
+                    <div className='row mt-3' style={rowStyle}>
                       
 
-                    <div className='col-sm'>
+                    <div className='col-3'>
                         {
                             <Budget/>
                         }  
                     </div>     
-                    <div className='col-sm'>
+                    <div className='col-3'>
                         {
                                            //Remaining component
                          
@@ -34,13 +38,22 @@ const App = () => {
                         
                         }        
                     </div>
-                    <div className='col-sm'>
+                    <div className='col-3'>
                         {
                                            //ExpenseTotal component
                          
                             <ExpenseTotal />
                         
                         }        
+                    </div>
+                    <div className='col-3'>
+                        {
+                                           //ExpenseTotal component
+                         
+                            <Currency />
+                        
+                        }        
+                    </div>
                     </div>
                         {
                             <ExpenseList/>
@@ -55,7 +68,7 @@ const App = () => {
                         }        
 
                 </div>
-            </div>
+            
         </AppProvider>
     );
 };
